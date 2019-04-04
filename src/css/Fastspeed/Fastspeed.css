@@ -1,0 +1,134 @@
+/**
+ * Colors:
+ */
+html {
+    background-color: #000;
+    color: #fff;
+}
+a, a:hover, a:visited, a:active, a:link{
+    color: #fff;
+}
+h4 {
+    color: #E40C2B ;
+}
+h1 {
+
+    text-align: left;
+    font-size: 1.5em;
+}
+.Logo {
+    display: block;
+    background-color: #000;
+    background-image: url(logo_44.png);
+    background-position: left center;
+}
+@media only screen and (min-width: 0px) and (max-width: 320px) {
+    .Logo {
+        background-image: url(logo_19.png);
+        background-position: left center;
+    }
+}
+.Login .header {
+    color:#fff;
+    background-color:#000;
+}
+.Login .content {
+    color:#fff;
+    background-color:#ddd;
+    border-color: #bbb;
+}
+.BasicDivTable {
+    border-color: #eee;
+}
+.BasicDivTable .BasicDivHead {
+    background-color: #000;
+    color: #E40C2B ;
+    font-size: 1.2em;
+    font-weight: bold;
+
+}
+.container-fluid {
+    background-color: #000;
+
+}
+.modal-body {
+    background-color:#000;
+    border: solid;
+}
+.modal-footer {
+    border-color: #fff;
+    background-color:#000;
+    border: solid;
+}
+.modal-backdrop {
+    background-color:rgba(0, 0, 0, 0.7);
+}
+.modal-header {
+    background-color: #000;
+    color: #E40C2B;
+    border: solid;
+    border-color: #fff;
+}
+.btn {
+    background-color: #E40C2B ;
+    color: #fff;
+}
+
+.alert {
+    background-color:#000;
+    border-color: #bbb;
+    border: solid;
+}
+
+#loadingmessage {}
+
+button,
+button:hover,
+button:focus,
+.btn,
+.btn:hover,
+.btn:focus,
+.btn.active,
+.btn-small,
+.btn-small:active,
+.btn-small:hover,
+.btn-small:focus {
+    color: #fff;
+    background-color: #E40C2B;
+}
+
+.button.isBig,
+.btn.isBig {
+  min-width: 50%;
+  margin: 0 auto;
+  clear: both;
+  font-size: 1.2em;
+  height: 3em;
+  line-height: 3em;
+  padding: 0 3em;
+  font-weight: normal;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  background-color: #E40C2B;
+}
+
+button:hover,
+.btn:hover,
+.btn-small:hover {
+    color: #FFFFFF;
+    background-color: #E00727;
+}
+
+a.btn-small,
+a.btn-small:active,
+a.btn-small:hover,
+a.btn-small:focus {
+    color:#ffffff;
+    background-color: #E40C2B;
+}
+
+a.btn-small:hover {
+    color:#ffffff;
+    background-color: #E00727;
+}

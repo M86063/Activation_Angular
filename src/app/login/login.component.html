@@ -1,0 +1,23 @@
+<app-alert-block [errorMessage]="errorMessage"></app-alert-block>
+<div class="container">
+  <div class="Login row-fluid span12" id="login">
+    <div class="header">
+      <h1>Indtast dine login oplysninger</h1>
+      <p>Hvis du er ny kunde på bredbånd, skal du bruge de oplysninger, du har fået tilsendt.</p>
+
+    </div>
+    <div class="content" id="html_element">
+      <form class="Form" id="loginForm" (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+
+        <input autocomplete="username" class="input isBig" type="text" formControlName="username" id="username"
+          placeholder="Kontonummer / Installations-ID">
+
+        <input autocomplete="current-password" class="input isBig" type="password" formControlName="password"
+          id="password" placeholder="Aktiveringskode">
+
+        <button id="loginBtn" class="button isBig" type="submit">Log ind</button>
+      </form>
+      <br />
+    </div>
+  </div>
+</div>

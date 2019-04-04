@@ -1,0 +1,17 @@
+.technician-wrapper {
+  text-align: initial;
+  padding: 1em;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.invalid {
+  background-color: rgba($color:#ff1616, $alpha: 0.2)
+}
+
+.text-small {
+  font-weight: normal;
+}

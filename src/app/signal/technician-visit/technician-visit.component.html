@@ -1,0 +1,71 @@
+<div class="technician-wrapper">
+  <app-alert-block [errorMessage]="errorMessage"></app-alert-block>
+
+  <div class="BasicDivTable">
+    <div class="BasicDivHead shadow">
+      <h1 class="text-center">Tekniker besøg</h1>
+    </div>
+    <div class="container-fluid topPadding">
+      <div class="span12">
+        Teknikeren sørger for, at signalniveauet på første stik eller et stik udpeget af teknikeren<br />
+        er tilstrækkeligt. Hvis du vil have Internet-forbindelsen på et andet eller flere stik,
+        udføres dette mod betaling. Andet arbejde som f.eks. fremføring af kabler udføres ligeledes
+        mod betaling.
+        <br />
+        <br />
+        Det er vigtigt, at du afprøver alle stik, da du ellers vil blive opkrævet et gebyr, hvis signalet
+        på ét af dine stik er tilstrækkeligt, når vores tekniker kommer.
+        <br />
+        <br />
+        Vi vil ringe til dig inden for 2 hverdage for at aftale et tidspunkt for besøg.
+        <br />
+      </div>
+    </div>
+  </div>
+
+  <div class="BasicDivTable">
+    <div class="BasicDivHead shadow">
+      <h2>Dine oplysninger</h2>
+    </div>
+    <div class="container-fluid topPadding">
+      <form [formGroup]="techOrderForm" (ngSubmit)="OrderTechnician()" class="Form">
+        <label>
+          <b>Navn:</b>
+          <div class="text-small">{{subscriber.firstName + ' ' + subscriber.lastName}}</div>
+        </label>
+
+        <label>
+          <b>Adresse:</b>
+          <div class="text-small">{{subscriber.address1}}</div>
+        </label>
+
+        <label>
+          <b>By:</b>
+          <div class="text-small">{{subscriber.city}}</div>
+        </label>
+        <label>
+          <b>Kontakt telefon:</b>
+          <input placeholder="skriv telefonnummer her..." id="tlf" type="text" formControlName="phone" class="input"
+            [ngClass]="{invalid: validateInputWithProp('phone', ['dirty', 'errors', 'invalid'])}">
+        </label>
+      </form>
+
+      Kontroller venligst ovenstående adresse er korrekt.
+      <br />
+      <br />
+      Hvis det ikke er den korrekte adresse hvor forbindelsen er installeret skal du <br />
+      ringe til YouSee Support på 70 70 40 40 - tast 2 for Support.
+      <br />
+      <br />
+      Klik på <b>Næste</b> for at bekræfte bestillingen.<br />
+      Klik på <b>Afslut</b> hvis du ønsker at flytte modemmet. <br />
+    </div>
+  </div>
+
+
+
+  <div class="row-fluid" class="btn-container">
+    <button type="button" class="button" (click)="exit()"> Afslut</button>
+    <button id="support" (click)="OrderTechnician()" class="button"> Næste</button>
+  </div>
+</div>

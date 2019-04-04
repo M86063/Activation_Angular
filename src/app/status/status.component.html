@@ -1,0 +1,189 @@
+<app-alert-block [errorMessage]="showAlertWithMessage"></app-alert-block>
+<div class="container">
+  <div class="row-fluid">
+    <div *ngIf="(session$ | async)" class="span12">
+      <div class="BasicDivTable" *ngIf="warning$ | async">
+
+        <div class="BasicDivHead shadow">
+          <h1 class="text-center">Aktivering af bredbånd</h1>
+        </div>
+
+        <div class="container-fluid topPadding">
+          <div class="row-fluid">
+            <div class="span12">
+              <p>
+                Din computer, telefon eller tablet skal have forbindelse til dit modem, før du kan aktivere dit
+                bredbånd.<br>
+
+                <br>Det kan du klare på to måder:<br>
+                <ul class="row-fluid left">
+                  <li>Enten kan du oprette forbindelse til modemmets trådløse netværk.
+                    Du finder netværksnavn og kode på et mærkat, der sidder på dit modem</li>
+                  <li>Eller du kan forbinde din computer til dit modem med et netværkskabel</li>
+                </ul>
+                <br>
+                <div>
+                  <p>
+                    Når du har forbundet din computer, telefon eller tablet til dit modem, er du klar til at aktivere
+                    din forbindelse. Klik på knappen herunder.
+                  </p>
+                </div>
+                <br> <br>
+
+            </div>
+          </div>
+          <div class="row-fluid">
+            <div class="span12">
+              <button type="button" class="button isBig" (click)="mitWifiClick()"> Gå til mitwifi.dk</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="print" *ngIf="(!(warning$ | async) && !!(internetSmpService$ | async)); else loading">
+        <div class="BasicDivTable">
+          <div class="BasicDivHead shadow">
+            <h1 class="text-center">Aktivering af bredbånd</h1>
+          </div>
+          <div class="container-fluid topPadding">
+            <div class="row-fluid">
+              <div class="span12">
+                <p>
+                  Her finder du relevante oplysninger om dit bredbånd. Hvis du vil, kan du foretage ændringer på navn
+                  og
+                  kode til dit wifi.<br /><br />
+
+                  <b>Når du er klar til at aktivere så klik på 'Næste' nederst på siden.</b><br />
+
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="BasicDivTable">
+          <div class="BasicDivHead shadow">
+            <span *ngIf="(session$ | async).siteconfig.isp === 'YouSee'">Dit</span> Trådløse Netværk
+          </div>
+          <div class="container-fluid topPadding">
+
+            <div class="row-fluid">
+              <div class="span12">
+                <p>Benyttes til at forbinde dit udstyr til det trådløse netværk</p>
+              </div>
+            </div>
+
+            <div class="row-fluid">
+              <div class="span12">
+                <h4>5 GHz netværk</h4>
+              </div>
+            </div>
+            <div class="row-fluid">
+              <div class="span4">
+                <h5>Navn 5GHz (SSID):</h5>
+              </div>
+              <div class="span8">
+                <span>{{(internetSmpService$ | async).ss_id_5g}}</span>
+              </div>
+            </div>
+            <div *ngIf="(internetSmpService$ | async)?.psk_5g !== undefined" class="row-fluid">
+              <div class="span4">
+                <h5>Nøgle:</h5>
+              </div>
+              <div class="span8">{{(internetSmpService$ | async).psk_5g}}</div>
+            </div>
+            <div *ngIf="(internetSmpService$ | async)?.psk_5g === undefined" class="row-fluid">
+              <div class="span4">
+                <h5>Nøgle:</h5>
+              </div>
+              <div class="span8">******</div>
+            </div>
+            <div class="row-fluid">
+              <div class="span4">
+                <h5>Kanal (Channel):</h5>
+              </div>
+              <div class="span8">
+                <span *ngIf="(internetSmpService$ | async)?.channel_5g === '0'; else channel_5g">Auto</span>
+                <ng-template #channel_5g>{{(internetSmpService$ | async).channel_5g}}</ng-template>
+              </div>
+            </div>
+
+            <div class="row-fluid">
+              <div class="span12">
+                <h4>2.4 GHz netværk</h4>
+              </div>
+            </div>
+            <div class="row-fluid">
+              <div class="span4">
+                <h5>Navn (SSID):</h5>
+              </div>
+              <div class="span8">{{(internetSmpService$ | async).ssid}}</div>
+            </div>
+            <div *ngIf="(internetSmpService$ | async)?.psk !== undefined" class="row-fluid">
+              <div class="span4">
+                <h5>Nøgle:</h5>
+              </div>
+              <div class="span8" data-bind="text: wifi().psk">{{(internetSmpService$ | async).psk}}</div>
+            </div>
+            <div *ngIf="(internetSmpService$ | async)?.psk === undefined" class="row-fluid">
+              <div class="span4">
+                <h5>Nøgle:</h5>
+              </div>
+              <div class="span8">******</div>
+
+            </div>
+            <div class="row-fluid">
+              <div class="span4">
+                <h5>Kanal (Channel):</h5>
+              </div>
+              <div class="span8">
+                <span *ngIf="(internetSmpService$ | async)?.channel === '0'; else channel">Auto</span>
+                <ng-template #channel>{{(internetSmpService$ | async).channel}}</ng-template>
+              </div>
+            </div>
+            <div class="row-fluid">
+              <div class="span12">
+                <button class="btn btn-small pull-right" (click)="open()">Rediger</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="BasicDivTable">
+          <div class="BasicDivHead shadow ">
+            <span *ngIf="(session$ | async).siteconfig.isp === 'YouSee'">Dit</span> Bredbånd</div>
+          <div class="container-fluid topPadding">
+            <div class="row-fluid">
+              <div class="span4">
+                <h5>Produkt:</h5>
+              </div>
+              <div class="span8"><span>{{(internetSmpService$ | async).product}}</span>
+              </div>
+            </div>
+            <div class="row-fluid">
+              <div class="span4">
+                <h5>Fast IP:</h5>
+              </div>
+              <div class="span8">
+                <span *ngIf="(cableModemIp$ | async); let cableModemIp; else message">{{cableModemIp}}</span>
+                <ng-template #message><span>Du kan se din faste ip-adresse her, efter du har aktivereret dit
+                    modem.</span></ng-template>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="BasicDivTable">
+        </div>
+
+        <div class="nextButton" *ngIf="!(warning$ | async)">
+          <button id="afslut" class="button isBig" (click)="nextBtn()">Næste</button>
+        </div>
+      </div>
+      <ng-template #loading>
+        <div *ngIf="(!(warning$ | async) && (session$ | async))" class="container row-fluid span12">
+          Indlæser, vent venligst! <img src="/assets/img/ajax-loader.gif"></div>
+      </ng-template>
+    </div>
+  </div>
+</div>

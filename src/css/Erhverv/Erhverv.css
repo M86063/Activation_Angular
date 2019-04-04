@@ -1,0 +1,127 @@
+/**
+ * Colors:
+ */
+html {
+  background-color: #f4f4f4;
+  color: #545D62;
+}
+
+a,
+a:hover,
+a:visited,
+a:active,
+a:link {
+  color: #fff;
+}
+
+h4 {
+  color: #192228;
+}
+
+.Logo {
+  border-top: 2px solid #192228;
+  display: block;
+  background-color: #192228;
+  background-image: url(logo_44.png);
+  border-bottom: 1px solid #f0f0f0;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 320px) {
+  .Logo {
+    background-image: url(logo_19.png);
+  }
+}
+
+.Login .header {
+  color: #fff;
+  background-color: #000;
+}
+
+.Login .content {
+  color: #fff;
+  background-color: #ddd;
+  border-color: #bbb;
+}
+
+.BasicDivTable .BasicDivHead {
+  background-color: #545D62;
+}
+
+.modal-footer {
+  background-color: #fff;
+  max-width: 700px;
+}
+
+.modal-header {
+  max-width: 700px;
+}
+
+.btn {
+  background-color: #2169B1;
+}
+
+.container-fluid {
+  background-color: #fff;
+}
+
+.modal-body {
+  background-color: #fff;
+  max-width: 700px;
+}
+
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#loadingmessage {}
+
+button,
+button:hover,
+button:focus,
+.btn,
+.btn:hover,
+.btn:focus,
+.btn.active,
+.btn-small,
+.btn-small:active,
+.btn-small:hover,
+.btn-small:focus {
+  color: #fff;
+  background-color: #2169B1;
+}
+
+.button.isBig,
+.btn.isBig {
+  min-width: 50%;
+  margin: 0 auto;
+  clear: both;
+  font-size: 1.2em;
+  height: 3em;
+  line-height: 3em;
+  padding: 0 3em;
+  font-weight: normal;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  background-color: #2169B1;
+}
+
+button:hover,
+.btn:hover,
+.btn-small:hover {
+  color: #ffffff;
+  background-color: #2157B1;
+}
+
+a.btn-small,
+a.btn-small:active,
+a.btn-small:hover,
+a.btn-small:focus {
+  color: #ffffff;
+  background-color: #2169B1;
+}
+
+a.btn-small:hover {
+  color: #ffffff;
+  background-color: #2157B1;
+}

@@ -1,0 +1,106 @@
+<app-alert-block [errorMessage]="errorMessage"></app-alert-block>
+<div class="container">
+  <div class="row-fluid span12">
+    <div id="finish" *ngIf="!!(internetSmpService$ | async)">
+      <div class="BasicDivTable">
+        <div class="BasicDivHead shadow">
+          <h1 class="text-center">Aktivering af bredbånd</h1>
+        </div>
+        <div class="container-fluid topPadding" style="text-align: center">
+          <p>Din internet forbindelse konfigureres.</p>
+          <p>Vent venligst <br /><b>
+              <ng-container appCounter [counter]="counter" (whenDone)="done()" [interval]="interval"
+                (value)="counterValue = $event">
+                <h3>{{counterValue}}</h3>
+              </ng-container>
+            </b> sekunder indtil konfigurationen
+            er gennemført.<br /></p>
+          <br />
+        </div>
+      </div>
+      <div class="BasicDivTable">
+        <div class="BasicDivHead shadow ">Trådløse Netværk</div>
+        <div class="container-fluid topPadding">
+          <div class="row-fluid">
+            <div class="span12">
+              <p>Benyttes til at forbinde dit udstyr til det trådløse netværk</p>
+            </div>
+          </div>
+          <div class="row-fluid">
+            <div class="span12">
+              <h4>5 GHz netværk</h4>
+            </div>
+          </div>
+          <div class="row-fluid">
+            <div class="span4">
+              <h5>Navn 5GHz:</h5>
+            </div>
+            <div class="span8">
+              <span>{{(internetSmpService$ | async)?.ss_id_5g}}</span>
+            </div>
+          </div>
+          <div *ngIf="(internetSmpService$ | async)?.psk_5g !== undefined" class="row-fluid">
+            <div class="span4">
+              <h5>Nøgle:</h5>
+            </div>
+            <div class="span8">{{(internetSmpService$ | async)?.psk_5g}}</div>
+          </div>
+          <div *ngIf="(internetSmpService$ | async)?.psk_5g === undefined" class="row-fluid">
+            <div class="span4">
+              <h5>Nøgle:</h5>
+            </div>
+            <div class="span8">******</div>
+          </div>
+          <div class="row-fluid">
+            <div class="span12">
+              <h4>2.4 GHz netværk</h4>
+            </div>
+          </div>
+          <div class="row-fluid">
+            <div class="span4">
+              <h5>Navn (SSID):</h5>
+            </div>
+            <div class="span8">{{(internetSmpService$ | async)?.ssid}}</div>
+          </div>
+          <div *ngIf="(internetSmpService$ | async)?.psk !== undefined" class="row-fluid">
+            <div class="span4">
+              <h5>Nøgle:</h5>
+            </div>
+            <div class="span8" data-bind="text: wifi().psk">{{(internetSmpService$ | async)?.psk}}</div>
+          </div>
+          <div *ngIf="(internetSmpService$ | async)?.psk === undefined" class="row-fluid">
+            <div class="span4">
+              <h5>Nøgle:</h5>
+            </div>
+            <div class="span8">******</div>
+          </div>
+        </div>
+      </div>
+      <div class="BasicDivTable">
+
+        <div class="BasicDivHead shadow ">Bredbånd</div>
+
+        <div class="container-fluid topPadding">
+          <div class="row-fluid">
+            <div class="span4">
+              <h5>Produkt:</h5>
+            </div>
+            <!-- /ko -->
+            <div class="span8"><span>{{(internetSmpService$ | async)?.product}}</span>
+            </div>
+          </div>
+          <div class="row-fluid">
+            <div class="span4">
+              <h5>Fast IP:</h5>
+            </div>
+            <div class="span8">
+              <span *ngIf="(cableModemIp$ | async); let cableModemIp; else message">{{cableModemIp}}</span>
+              <ng-template #message><span>Du kan se din faste ip-adresse her, efter du har aktivereret dit modem.</span>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

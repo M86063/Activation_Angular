@@ -1,0 +1,140 @@
+<!-- WiFi popup -->
+
+<div class="modal-header shadow">
+  Trådløst Netværk
+</div>
+<div class="modal-body">
+  <div class="modalDivContainer">
+    <div class="modalDivContainer left">
+      <p>Du har nu mulighed for at vælge et navn og et kodeord til dit trådløse netværk. </p>
+      <p>
+        Ændringerne træder først i kraft, efter du har trykket på afslut på næste side.
+      </p>
+      <div class="alert alert-block fade in hide wifi-warning" id="WiFi-1">
+        <p> Kun A-Z, a-z og 0-9, æøå er ikke tilladt</p>
+      </div>
+      <div class="alert alert-block fade in hide wifi-warning" id="WiFi-2">
+        <p> Netværksnøglen er ikke gyldig. Den skal være på 8-16 tegn. Kun A-Z, a-z og 0-9</p>
+      </div>
+      <div class="alert alert-block fade in hide wifi-warning" id="WiFi-3">
+        <p> Fejl i netværkskanal prøv en anden</p>
+      </div>
+      <div class="alert alert-block fade in hide wifi-warning" id="WiFi-4">
+        <p> Fejl i 5ghz netværkskanal prøv en anden</p>
+      </div>
+      <div class="alert alert-block fade in hide wifi-warning" id="WiFi-5">
+        <p>Du kan ikke ændre wifi opsætning, da der ikke er registeret et modem på dit abbonement.</p>
+      </div>
+      <div class="alert alert-error alert-block fade in h½ide" id="errorDown">
+        Der er opstået en fejl, prøv igen senere.
+      </div>
+    </div>
+    <div class="modalDivContainer right">
+      <table class="pwvalid span12">
+        <!-- Rule 1 -->
+        <tr>
+          <td style="font-size: 11px;">
+            <img id="img11" width="10" height="10" src="../../assets/img/check.gif" />
+            <span> Netværksnavn imellem 4-20 tegn.</span>
+          </td>
+        </tr>
+        <!-- Rule 2 -->
+        <tr>
+          <td style="font-size: 11px;">
+            <img id="img11" width="10" height="10" src="../../assets/img/check.gif" />
+            <span> Netværksnavn ugyldige tegn.</span>
+          </td>
+        </tr>
+        <!-- Rule 3 -->
+        <tr>
+          <td style="font-size: 11px;">
+            <img id="img11" width="10" height="10" src="../../assets/img/check.gif" />
+            <span> Nøgle imellem 8-16 tegn.</span>
+          </td>
+        </tr>
+        <!-- Rule 4 -->
+        <tr>
+          <td style="font-size: 11px;">
+            <img id="img11" width="10" height="10" src="../../assets/img/cross.gif" />
+            <span> Nøgle ugyldige tegn.</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <form class="Form" id="wifiForm" (ngSubmit)="onSubmit()" [formGroup]="wifiForm">
+    <div class="modalDivContainer">
+      <div class="row">
+        <div class="span6">
+          <h4>5 GHz netværk</h4>
+          <div id="ssid5Error" class="input-append control-group">
+            <label for="ss_id_5g">Netværksnavn (SSID):</label>
+            <input type="text" class="input" formControlName="ss_id_5g" />
+            <label class="error"
+              *ngIf="this.wifiForm.controls['ss_id_5g'].invalid && this.wifiForm.controls['ss_id_5g'].dirty">
+              Maks 4-20 tegn.</label>
+          </div>
+        </div>
+        <div class="span6">
+          <h4>2.4 GHz netværk</h4>
+          <div id="ssidError" class="input-append control-group">
+            <label for="ssid">Netværksnavn (SSID):</label>
+            <input type="text" class="input" formControlName="ssid" />
+            <label class="error" *ngIf="this.wifiForm.controls['ssid'].invalid && this.wifiForm.controls['ssid'].dirty">
+              Maks 4-20 tegn.</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span6">
+          <div class="input-append control-group">
+            <label for="psk_5g">Netværksnøgle:</label>
+            <input type="text" class="input" placeholder="******" formControlName="psk_5g" />
+            <label class="error"
+              *ngIf="this.wifiForm.controls['psk_5g'].invalid && this.wifiForm.controls['psk_5g'].dirty">
+              Maks 8-16 tegn. Kun A-Z.</label>
+          </div>
+        </div>
+        <div class="span6">
+          <div id="pskError" class="input-append control-group">
+            <label for="psk">Netværksnøgle:</label>
+            <input type="text" class="input" placeholder="******" formControlName="psk" />
+            <label class="error" *ngIf="this.wifiForm.controls['psk'].invalid && this.wifiForm.controls['psk'].dirty">
+              Maks 8-16 tegn. Kun A-Z.</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span6">
+          <div id="channel5Error" class="input-append control-group">
+            <label for="channel_5g">Netværkskanal (Channel):</label>
+
+            <select formControlName="channel_5g">
+              <option *ngFor="let channel of Wifi5GChannels">{{channel}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="span6">
+          <div id="channelError" class="input-append control-group">
+            <label for="channel">Netværkskanal (Channel):</label>
+            <select formControlName="channel">
+              <option *ngFor="let channel of WifiChannels">
+                {{channel}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <span class="error" *ngIf="wifiForm.invalid">Alle felter skal udfyldes korrekt</span>
+      <span class="error"
+        *ngIf="this.wifiForm.controls['psk_5g'].invalid || this.wifiForm.controls['psk'].invalid">Indtast gyldige
+        netværksnøgler</span>
+      <button class="btn" aria-label="Close" (click)="modal.dismiss('Close click')">Annuller</button>
+      <button id="saveWifi" class="btn" [disabled]="wifiForm.invalid" type="submit">Ok</button>
+    </div>
+
+  </form>
+</div>

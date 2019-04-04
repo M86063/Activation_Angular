@@ -1,0 +1,225 @@
+/**
+ * Colors:
+ */
+html {
+    background-color: #f4f4f4;
+    color: #545D62;
+}
+a, a:hover, a:visited, a:active, a:link{
+    color: #fff;
+}
+h4 {
+    color: #192228;
+}
+.Logo {
+	border-top: 36px solid #389f31;
+	 display: block;
+     background-color: white;
+     background-image: url(logo_44.png);
+}
+@media only screen and (min-width: 0px) and (max-width: 320px) {
+
+    .Logo{
+        position:relative;
+        height:25px;
+        width:100%;
+        background-image:url(logo_19.png);
+        background-size: 63px, 19px;
+        background-repeat:no-repeat;
+        background-position:10px center ;
+        background-color:white;
+        margin-bottom:10px;
+    }
+
+    .Footer{
+        position:relative;
+        bottom:0;
+        height:18px;
+        width:100%;
+        background-color: #389f31;
+    }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 600px) {
+    .Logo{
+        position:relative;
+        height:60px;
+        width:100%;
+        background-image:url(logo_44.png);
+        background-repeat:no-repeat;
+        background-position:50px center ;
+        background-color:white;
+        margin-bottom:10px;
+    }
+
+    .Footer{
+        position:relative;
+        bottom:0;
+        height:36px;
+        width:100%;
+        background-color: #389f31;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 800px) {
+
+    .Logo{
+        position:relative;
+        height:70px;
+        width:100%;
+        background-image:url(logo_44.png);
+        background-repeat:no-repeat;
+        background-position:50px center ;
+        background-color:white;
+        margin-bottom:10px;
+    }
+
+    .Footer{
+        position:relative;
+        bottom:0;
+        height:36px;
+        width:100%;
+        background-color: #389f31;
+    }
+}
+
+@media only screen and (min-width: 801px) and (max-width: 959px) {
+
+    .Logo{
+        position:relative;
+        height:70px;
+        width:100%;
+        background-image:url(logo_44.png);
+        background-repeat:no-repeat;
+        background-position:50px center ;
+        background-color:white;
+        margin-bottom:10px;
+    }
+
+    .Footer{
+        position:relative;
+        bottom:0;
+        height:36px;
+        width:100%;
+        background-color: #389f31;
+    }
+}
+
+@media only screen and (min-width: 960px)  {
+
+    .Logo{
+        position:relative;
+        height:70px;
+        width:100%;
+        background-image:url(logo_44.png);
+        background-repeat:no-repeat;
+        background-position:50px center ;
+        background-color:white;
+        margin-bottom:10px;
+    }
+
+    .Footer{
+        position:relative;
+        bottom:0;
+        height:36px;
+        width:100%;
+        background-color: #389f31;
+    }
+}
+
+.Login .header {
+    color:#fff;
+    background-color:#000;
+}
+.Login .content {
+    color:#fff;
+    background-color:#ddd;
+    border-color: #bbb;
+}
+
+.BasicDivTable .BasicDivHead {
+ 	background-color: #43B048;
+}
+
+.modal-footer {
+	background-color:#fff;
+	max-width:700px;
+}
+.modal-header {
+	max-width:700px;
+}
+.btn {
+	background-color: #43B048;
+}
+
+.container-fluid {
+    background-color: #fff;
+}
+.modal-body {
+    background-color:#fff;
+    max-width:700px;
+}
+.modal-backdrop {
+    background-color:rgba(0, 0, 0, 0.7);
+}
+
+.Footer{
+        position:relative;
+        bottom:0;
+        height:36px;
+        width:100%;
+        background-color: #389f31;
+    }
+
+#loadingmessage {}
+
+button,
+button:hover,
+button:focus,
+.btn,
+.btn:hover,
+.btn:focus,
+.btn.active,
+.btn-small,
+.btn-small:active,
+.btn-small:hover,
+.btn-small:focus {
+    color: #fff;
+    background-color: #43B048;
+}
+
+.button.isBig,
+.btn.isBig {
+  min-width: 50%;
+  margin: 0 auto;
+  clear: both;
+  font-size: 1.2em;
+  height: 3em;
+  line-height: 3em;
+  padding: 0 3em;
+  font-weight: normal;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  background-color: #43B048;
+}
+
+button:hover,
+.btn:hover,
+.btn-small:hover {
+    color: #ffffff;
+    background-color: #389f31;
+}
+
+a.btn-small,
+a.btn-small:active,
+a.btn-small:hover,
+a.btn-small:focus {
+    color:#ffffff;
+    background-color: #43B048;
+}
+
+a.btn-small:hover {
+    color:#ffffff;
+    background-color: #389f31;
+}

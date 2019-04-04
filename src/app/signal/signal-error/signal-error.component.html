@@ -1,0 +1,52 @@
+<div class="signal-error-container">
+  <h1>Signalet i dit kabel-tv-stik er ikke tilstrækkelig stærkt.</h1>
+  <img [src]="pics[siteConfig.isp]" style="width: 300px; float: right; margin: 5px;" />
+  <p>Tilslut kabelmodemmet til første stik i din bolig - dvs. der hvor kabel-tv-signalet kommer ind. </p>
+  <p>
+    Virker det ikke, så prøv at slutte kabelmodemmet til et eventuelt andet stik. Har du flere stik, kan der
+    nemlig være forskel på deres signalstyrke. Husk først at slukke for modem og udstyr (pc, router og
+    lign.).
+  </p>
+  <p>
+    Er signalstyrken stadig ikke godkendt, skal signalet i din kabel-tv-installation forstærkes af en af
+    vores teknikere.
+  </p>
+  <p>
+    <b>
+      {{siteConfig.isp}} sikrer, at der er tilstrækkeligt signal i det første kabel-tv-stik (eller stik udpeget af
+      {{siteConfig.isp}}) i din bolig. Derfor vil fejlretningen på dette stik være gratis.
+    </b>
+  </p>
+
+  <p>
+    For at fejlmelde kan du kontakte
+    <span>
+      {{siteConfig.isp}}
+    </span>
+    på
+    <span>
+      {{siteConfig.phone}}
+    </span>
+    <span *ngIf="siteConfig.mail">
+      eller {{siteConfig.mail}}
+    </span>
+  </p>
+  <p>
+    Hvis du ønsker, at dit kabelmodem skal være tilsluttet et andet stik end det første, kan
+    dette gøres mod beregning. Du kan ringe til {{siteConfig.isp}}
+    Kundeservice på {{siteConfig.phone}} for yderligere information og bestilling.
+  </p>
+</div>
+<p *ngIf="siteConfig.isp == 'YouSee'">
+  Klik på <b>Næste</b> for at bestille en tekniker.
+  <br />
+</p>
+
+Klik på <b>Afslut</b> hvis du ønsker at flytte modemmet til et andet stik.
+<br />
+<br />
+<div class="btn-container">
+  <button type="button" class="button" data-bind="click: exit"> Afslut</button>
+  <button *ngIf="siteConfig.isp == 'YouSee'" type="button" class="button" (click)="goToTechnician()">
+    Næste</button>
+</div>

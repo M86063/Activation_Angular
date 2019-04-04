@@ -1,0 +1,239 @@
+/**
+ * Colors:
+ */
+html {
+    background-color: #f4f4f4;
+}
+a, a:hover, a:visited, a:active, a:link{
+    color: #fff;
+}
+h4 {
+    color: #d41d1b;
+}
+.Logo {
+    display: block;
+    background-color: #e32826;
+    background-image: url(logo_44.png);
+}
+@media only screen and (min-width: 0px) and (max-width: 320px) {
+    .Logo {
+        position: relative;
+        top: 18px;
+        height: 25px;
+        width: 100%;
+        background-image: url(logo_19.png);
+        background-size: 63px, 19px;
+        background-repeat: no-repeat;
+        background-position: 10px center;
+        background-color: #e32826;
+        margin-bottom: 10px;
+    }
+    .Footer {
+        position: relative;
+        bottom: 0;
+        height: 18px;
+        width: 100%;
+        background-color: white;
+        background: url(stofa_footer_bg.png) no-repeat top left white;
+    }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 600px) {
+    .Logo {
+        position: relative;
+        top: 36px;
+        height: 60px;
+        width: 100%;
+        background-image: url(logo_19.png);
+        background-repeat: no-repeat;
+        background-position: 50px center;
+        background-color: #e32826;
+        margin-bottom: 10px;
+    }
+    .Footer {
+        position: relative;
+        bottom: 0;
+        height: 36px;
+        width: 100%;
+        background-color: white;
+        background:url(stofa_footer_bg.png) no-repeat top left white;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 800px) {
+    .Logo {
+        position: relative;
+        top: 36px;
+        height: 70px;
+        width: 100%;
+        background-image: url(logo_44.png);
+        background-repeat: no-repeat;
+        background-position: 50px center;
+        background-color: #e32826;
+        margin-bottom: 10px;
+    }
+    .Footer {
+        position: relative;
+        bottom: 0;
+        height: 36px;
+        width: 100%;
+        background-color: white;
+        background: url(stofa_footer_bg.png) no-repeat top left white;
+    }
+}
+
+@media only screen and (min-width: 801px) and (max-width: 959px) {
+    .Logo {
+        position: relative;
+        top: 36px;
+        height: 70px;
+        width: 100%;
+        background-image: url(logo_44.png);
+        background-repeat: no-repeat;
+        background-position: 50px center;
+        background-color: #e32826;
+        margin-bottom: 10px;
+    }
+    .Footer {
+        position: relative;
+        bottom: 0;
+        height: 36px;
+        width: 100%;
+        background-color: white;
+        background: url(stofa_footer_bg.png) no-repeat top left white;
+    }
+}
+
+@media only screen and (min-width: 960px) {
+    .Logo {
+        position: relative;
+        top: 36px;
+        height: 70px;
+        width: 100%;
+        background-image: url(logo_44.png);
+        background-size: 7%;
+        background-repeat: no-repeat;
+        background-position: 50px center;
+        background-color: #e32826;
+        margin-bottom: 40px;
+    }
+    .Footer {
+        position: relative;
+        bottom: 0;
+        height: 36px;
+        width: 100%;
+        background-color: white;
+        background: url(stofa_footer_bg.png);
+        background-repeat: repeat-x;
+        background-size:contain;
+    }
+}
+.Login .header {
+    color:#fff;
+    background-color:#000;
+}
+.Login .content {
+    color:#fff;
+    background-color:#ddd;
+    border-color: #bbb;
+}
+
+.BasicDivTable {
+	border-color: #b3ce42;
+}
+.BasicDivTable .BasicDivHead {
+ 	background-color: #e32826;
+}
+
+.modal-footer {
+	border-color: #b3ce42;
+	background-color:#fff;
+	max-width:700px;
+}
+.modal-header {
+	background-color: #e32826;
+	max-width:700px;
+}
+.btn {
+	background-color: #e32826;
+}
+
+.container-fluid {
+    background-color: #fff;
+}
+.modal-body {
+    background-color:#fff;
+    max-width:700px;
+}
+.modal-backdrop {
+    background-color:rgba(0, 0, 0, 0.7);
+}
+
+
+.Footer {
+		position:relative;
+		bottom:0;
+		height:36px;
+		width:100%;
+		background-position:bottom left;
+		background-color:#f6f6f6;
+		background-repeat:repeat-x;
+		display: block;
+		background-image: url(stofa_footer_bg.png);
+	}
+
+#loadingmessage {
+	display:none;
+
+}
+
+button,
+button:hover,
+button:focus,
+.btn,
+.btn:hover,
+.btn:focus,
+.btn.active,
+.btn-small,
+.btn-small:active,
+.btn-small:hover,
+.btn-small:focus {
+    color: #fff;
+    background-color: #e32826;
+}
+
+.button.isBig,
+.btn.isBig {
+  min-width: 50%;
+  margin: 0 auto;
+  clear: both;
+  font-size: 1.2em;
+  height: 3em;
+  line-height: 3em;
+  padding: 0 3em;
+  font-weight: normal;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  background-color: #e32826;
+}
+
+button:hover,
+.btn:hover,
+.btn-small:hover {
+    color: #ffffff;
+    background-color: #d41d1b;
+}
+
+a.btn-small,
+a.btn-small:active,
+a.btn-small:hover,
+a.btn-small:focus {
+    color:#ffffff;
+    background-color: #e32826;
+}
+
+a.btn-small:hover {
+    color:#ffffff;
+    background-color: #d41d1b;
+}

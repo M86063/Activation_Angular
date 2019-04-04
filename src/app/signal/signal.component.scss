@@ -1,0 +1,20 @@
+.row-fluid {
+  margin: 0 -1em;
+  clear: both;
+  *zoom: 1;
+}
+
+.span12 {
+  width: 100%
+}
+
+.row-fluid:before,
+.row-fluid:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.row-fluid:after {
+  clear: both;
+}
